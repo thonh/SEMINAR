@@ -11,7 +11,7 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator  screenOptions={{ headerShown: false }}>
         <Tab.Screen name="ButtonComponent" component={ButtonComponent} />
         <Tab.Screen name="ImagesComponent" component={ImagesComponent} />
         <Tab.Screen name="CardsComponent" component={CardsComponent} />
