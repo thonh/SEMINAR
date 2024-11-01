@@ -28,7 +28,7 @@ const ButtonComponent = () => {
         options={{ title: "ExpandableCircularButton" }}
       />
       <Stack.Screen
-        name="SwipeButton"
+        name="Swipe Button"
         component={SwipeButton}
         options={{ title: "SwipeButton" }}
       />
@@ -40,9 +40,24 @@ const DetailComponent = ({ navigation }) => {
   return (
     <View>
       <TouchableOpacity
-        onPress={() => navigation.navigate("SwipeButton")}
+        onPress={() => navigation.navigate("Floating Action Button")}
         style={{ padding: 20, borderBottomWidth: 1 }}>
-        <Text>SwipeButton</Text>
+        <Text>Floating Action Button</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Action Button with Multiple Option")}
+        style={{ padding: 20, borderBottomWidth: 1 }}>
+        <Text>Action Button with Multiple Option</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Expandable Circular Button")}
+        style={{ padding: 20, borderBottomWidth: 1 }}>
+        <Text>Expandable Circular Button</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Swipe Button")}
+        style={{ padding: 20, borderBottomWidth: 1 }}>
+        <Text>Swipe Button</Text>
       </TouchableOpacity>
     </View>
   );
