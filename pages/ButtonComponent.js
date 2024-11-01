@@ -1,10 +1,10 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import FloatingActionButton from "../components/FloatingActionButton";
-import ActionButtonwithMultipleOption from "../components/ActionButtonwithMultipleOption";
-import ExpandableCircularButton from "../components/ExpandableCircularButton";
-import SwipeButton from "../components/SwipeButton";
+import FloatingActionButton from "../components/Button/FloatingActionButton";
+import ActionButtonwithMultipleOption from "../components/Button/ActionButtonwithMultipleOption";
+import ExpandableCircularButton from "../components/Button/ExpandableCircularButton";
+import SwipeButton from "../components/Button/SwipeButton";
 
 const Stack = createNativeStackNavigator();
 
