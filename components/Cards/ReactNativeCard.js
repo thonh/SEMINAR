@@ -6,7 +6,7 @@ const ReactNativeCard = () => {
   return (
     <View style={styles.container}>
       <Card style={styles.card}>
-        <Card.Cover source={{ uri: 'https://your-image-url.com' }} />
+        <Card.Cover source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg' }} />
         <Card.Content>
           <Title>Title of the Card</Title>
           <Paragraph>This is a description or content inside the card.</Paragraph>
