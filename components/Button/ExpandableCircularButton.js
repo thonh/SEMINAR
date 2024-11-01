@@ -1,12 +1,62 @@
-import { View, Text } from "react-native";
-import React from "react";
+// Expandable Circular Button in React Native using react-native-circle-button
+// https://aboutreact.com/react-native-expandable-circular-button/
 
+// import React in our code
+import React from 'react';
+
+// import all the components we are going to use
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Text,LogBox 
+} from 'react-native';
+
+//Import basic react native elements
+import CircleButton from 'react-native-circle-button';
+
+LogBox.ignoreLogs(['Animated: useNativeDriver']);
 const ExpandableCircularButton = () => {
   return (
-    <View>
-      <Text>ExpandableCircularButton</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
+        <Text style={styles.titleStyle}>
+          Example of Expandable Circular Button in React Native
+          using react-native-circle-button
+        </Text>
+        <CircleButton
+          size={45}
+          primaryColor="#41727E"
+          secondaryColor="#459186"
+          onPressButtonTop={
+            () => alert('Top Button Clicked')
+          }
+          onPressButtonRight={
+            () => alert('Right Button Clicked')
+          }
+          onPressButtonBottom={
+            () => alert('Bottom Button Clicked')
+          }
+          onPressButtonLeft={
+            () => alert('Left Button Clicked')
+          }
+        />
+      </View>
+    </SafeAreaView>
   );
 };
-
 export default ExpandableCircularButton;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    padding: 10,
+  },
+  titleStyle: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    padding: 10,
+  },
+});
