@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import FullScreenBg from "../components/Images/FullScreenBg";
 import ImageLoading from "../components/Images/ImageLoading";
 import ImageMapper from "../components/Images/ImageMapper";
-import SlideImgGallery from "../components/Images/SlideimgGallery";
+import SlideImgGallery from "../components/Images/SlideImgGallery";
 import GridImgGallery from "../components/Images/GridImgGallery";
 
 const Stack = createNativeStackNavigator();
