@@ -1,35 +1,26 @@
+// components/Cards/Swipeable.js
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Card, Title, Paragraph, Button } from 'react-native-paper';
+import { FlatList, SafeAreaView } from 'react-native';
+import SwipeableCard from './SwipeableCard';
+
+const data = [
+  { id: '1', title: 'Halloween Event ', description: 'Hallowen card 1', image: 'https://dashboard.dienthoaivui.com.vn/uploads/wp-content/uploads/2021/04/anh-nen-halloween-2.jpg' },
+  { id: '2', title: 'Halloween Running', description: 'Hallowen card 2', image: 'https://png.pngtree.com/thumb_back/fw800/background/20240506/pngtree-beautiful-halloween-trendy-background-images-image_15725314.jpg' },
+  // Thêm nhiều card tùy ý
+];
 
 const Swipeable = () => {
   return (
-    <View style={styles.container}>
-      <Card style={styles.card}>
-        <Card.Cover source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg' }} />
-        <Card.Content>
-          <Title>Title of the Card</Title>
-          <Paragraph>This is a description or content inside the card.</Paragraph>
-        </Card.Content>
-        <Card.Actions>
-          <Button onPress={() => console.log('Pressed')}>Action</Button>
-        </Card.Actions>
-      </Card>
-    </View>
+    <SafeAreaView>
+      <FlatList
+        data={data}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <SwipeableCard title={item.title} description={item.description} image={item.image} />
+        )}
+      />
+    </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 16,
-    backgroundColor: '#f0f0f0',
-  },
-  card: {
-    elevation: 4,
-    borderRadius: 8,
-  },
-});
 
 export default Swipeable;
