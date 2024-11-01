@@ -1,34 +1,63 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Card, Title, Paragraph, Button } from 'react-native-paper';
+import { View, Text, StyleSheet, Alert } from 'react-native';
+import { RectButton, Swipeable } from 'react-native-gesture-handler';
 
-const Swipeable = () => {
+const SwipeableCard = ({ title, description }) => {
+  const renderLeftActions = () => (
+    <RectButton style={styles.leftAction} onPress={() => Alert.alert("Saved")}>
+      <Text style={styles.actionText}>Save</Text>
+    </RectButton>
+  );
+
+  const renderRightActions = () => (
+    <RectButton style={styles.rightAction} onPress={() => Alert.alert("Deleted")}>
+      <Text style={styles.actionText}>Delete</Text>
+    </RectButton>
+  );
+
   return (
-    <View style={styles.container}>
-      <Card style={styles.card}>
-        <Card.Cover source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg' }} />
-        <Card.Content>
-          <Title>Title of the Card</Title>
-          <Paragraph>This is a description or content inside the card.</Paragraph>
-        </Card.Content>
-        <Card.Actions>
-          <Button onPress={() => console.log('Pressed')}>Action</Button>
-        </Card.Actions>
-      </Card>
-    </View>
+    <Swipeable
+      renderLeftActions={renderLeftActions}
+      renderRightActions={renderRightActions}
+    >
+      <View style={styles.card}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.description}>{description}</Text>
+      </View>
+    </Swipeable>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 16,
-    backgroundColor: '#f0f0f0',
-  },
   card: {
-    elevation: 4,
+    backgroundColor: '#fff',
+    padding: 16,
+    marginVertical: 8,
     borderRadius: 8,
+    elevation: 3,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  description: {
+    fontSize: 14,
+    color: '#666',
+  },
+  leftAction: {
+    backgroundColor: '#4CAF50',
+    justifyContent: 'center',
+    flex: 1,
+  },
+  rightAction: {
+    backgroundColor: '#F44336',
+    justifyContent: 'center',
+    flex: 1,
+  },
+  actionText: {
+    color: '#fff',
+    fontSize: 16,
+    padding: 20,
   },
 });
 
