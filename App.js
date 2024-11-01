@@ -5,11 +5,13 @@ import ButtonComponent from "./pages/ButtonComponent";
 import ImagesComponent from "./pages/ImagesComponent";
 import CardsComponent from "./pages/CardsComponent";
 import { NavigationContainer } from "@react-navigation/native";
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
     <NavigationContainer>
       <Tab.Navigator  screenOptions={{ headerShown: false }}>
         <Tab.Screen name="ButtonComponent" component={ButtonComponent} />
@@ -17,6 +19,7 @@ export default function App() {
         <Tab.Screen name="CardsComponent" component={CardsComponent} />
       </Tab.Navigator>
     </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }
 
